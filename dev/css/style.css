@@ -1,10 +1,21 @@
-h1 {
-  text-align: center;
+body {
   font-family: 'Roboto Mono', monospace;
+  text-align: center;
+}
+
+h1 {
   margin: 40px;
 }
 
+#matrix-container {
+  background-color: rgb(240, 240, 240);
+  padding: 20px;
+  width: fit-content;
+  margin: auto;
+}
+
 table {
+  margin: auto;
   border-collapse: collapse;
   border: 2px solid black;
 }
@@ -12,4 +23,9 @@ table {
 td {
   border: 1px solid black;
   padding: 10px;
+}
+
+.diagonal {
+  background-color: yellow;
+  color: red;
 }
