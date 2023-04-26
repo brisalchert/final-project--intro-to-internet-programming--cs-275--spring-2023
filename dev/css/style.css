@@ -9,7 +9,7 @@ h1 {
 
 h2 {
   box-shadow: 0 0 5px gray;
-  line-height: 50px;
+  padding: 20px;
 }
 
 #matrix-container {
