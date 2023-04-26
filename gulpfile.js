@@ -39,16 +39,6 @@ let transpileJSForDev = () => {
         .pipe(dest(`temp/js`));
 };
 
-let copyCSSForDev = () => {
-    return src(`dev/css/style.css`)
-        .pipe(dest(`temp/css`));
-};
-
-let copyHTMLForDev = () => {
-    return src(`dev/html/index.html`)
-        .pipe(dest(`temp`));
-};
-
 let compressCSSForProd = () => {
     return src(`dev/css/style.css`)
         .pipe(cleanCSS({compatibility: `ie8`}))
@@ -75,7 +65,9 @@ let serve = () => {
         browser: browserChoice,
         server: {
             baseDir: [
-                `temp/`
+                `temp`,
+                `dev`,
+                `dev/html`
             ]
         }
     });
@@ -83,10 +75,10 @@ let serve = () => {
     watch(`dev/js/*.js`, series(lintJS, transpileJSForDev))
         .on(`change`, reload);
 
-    watch(`dev/css/*.css`, series(lintCSS, copyCSSForDev))
+    watch(`dev/css/*.css`, lintCSS)
         .on(`change`, reload);
 
-    watch(`dev/html/*.html`, series(lintHTML, copyHTMLForDev))
+    watch(`dev/html/*.html`, lintHTML)
         .on(`change`, reload);
 };
 
@@ -123,8 +115,6 @@ exports.default = series(
     lintJS,
     lintHTML,
     transpileJSForDev,
-    copyCSSForDev,
-    copyHTMLForDev,
     serve
 );
 exports.serve = series(
@@ -132,8 +122,6 @@ exports.serve = series(
     lintJS,
     lintHTML,
     transpileJSForDev,
-    copyCSSForDev,
-    copyHTMLForDev,
     serve
 );
 exports.build = series(
