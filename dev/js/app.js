@@ -6,7 +6,12 @@ window.onload = () => {
 
     // Check that the input is an integer greater than 1
     while (isNaN(parseInt(dimension)) || parseInt(dimension) < 2) {
-        alert(`Integers less than 2 are not allowed. Please try again.`);
+        if (isNaN(parseInt(dimension))) {
+            alert(`Invalid input. Please try again.`);
+        }
+        else {
+            alert(`Integers less than 2 are not allowed. Please try again.`);
+        }
 
         dimension = window.prompt(`Enter the size of your square matrix:`);
     }
