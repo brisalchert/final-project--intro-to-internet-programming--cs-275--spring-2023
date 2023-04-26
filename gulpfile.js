@@ -40,7 +40,7 @@ let transpileJSForDev = () => {
 };
 
 let compressCSSForProd = () => {
-    return src(`dev/css/style.css`)
+    return src(`dev/css/*.css`)
         .pipe(cleanCSS({compatibility: `ie8`}))
         .pipe(dest(`prod/css`));
 };
@@ -52,7 +52,7 @@ let compressHTML = () => {
 };
 
 let transpileJSForProd = () => {
-    return src(`js/*.js`)
+    return src(`dev/js/*.js`)
         .pipe(babel())
         .pipe(jsCompressor())
         .pipe(dest(`prod/js`));
@@ -61,7 +61,7 @@ let transpileJSForProd = () => {
 let serve = () => {
     browserSync({
         notify: true,
-        reloadDelay: 50,
+        reloadDelay: 1000,      // Required delay to finish lintHTML before reload
         browser: browserChoice,
         server: {
             baseDir: [
