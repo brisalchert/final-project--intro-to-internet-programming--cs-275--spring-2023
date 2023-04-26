@@ -11,6 +11,7 @@ h1 {
 }
 
 h2 {
+  margin: 16px;
   box-shadow: 0 0 5px gray;
   padding: 20px;
   font-size: 1.5em;
@@ -26,7 +27,7 @@ h2 {
 }
 
 table {
-  margin: 16px;
+  margin: auto;
   border-collapse: collapse;
   border: 2px solid black;
 }
