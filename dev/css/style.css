@@ -1,15 +1,20 @@
 body {
   font-family: 'Roboto Mono', monospace;
   text-align: center;
+  line-height: normal;
 }
 
 h1 {
   margin: 40px;
+  font-size: 2em;
+  font-weight: 600;
 }
 
 h2 {
   box-shadow: 0 0 5px gray;
   padding: 20px;
+  font-size: 1.5em;
+  font-weight: 600;
 }
 
 #matrix-container {
@@ -21,7 +26,7 @@ h2 {
 }
 
 table {
-  margin: auto;
+  margin: 16px;
   border-collapse: collapse;
   border: 2px solid black;
 }
