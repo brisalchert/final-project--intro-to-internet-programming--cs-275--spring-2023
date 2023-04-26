@@ -17,6 +17,7 @@ h2 {
   padding: 20px;
   width: fit-content;
   margin: auto;
+  visibility: hidden;
 }
 
 table {

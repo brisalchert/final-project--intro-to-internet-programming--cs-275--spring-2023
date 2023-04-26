@@ -16,6 +16,9 @@ window.onload = () => {
         dimension = window.prompt(`Enter the size of your square matrix:`);
     }
 
+    // Reveal the matrix container
+    matrixContainer.style.visibility = `visible`;
+
     // Print the header for the original matrix
     let originalMatrixHeader = document.createElement(`h2`);
     originalMatrixHeader.innerText += `Original Matrix`;
